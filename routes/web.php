@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Returning views with 'Route::view()'*/
+// Welcome page - default page
+Route::view("/", 'welcome');
+
+// Home page
+Route::view('home','home');
+
+// Overview page
+Route::view('overview', 'overview');
+
+// Sign in page
+Route::get('sign_in', [Controllers\SignInController::class, 'show']);
+
+// Register page
+Route::get('register',[Controllers\RegisterController::class,'show']);

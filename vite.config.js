@@ -6,8 +6,16 @@ export default defineConfig({
         laravel({
             input: [
                 // CSS files
+
+                //Root
                 'resources/css/app.css', 
                 'resources/css/welcome.css',
+                'resources/css/overview.css',
+                'resources/css/home.css',
+                'resources/css/sign_in.css',
+
+                //*/universals
+                'resources/css/universals/footer.css',
                 
                 // JavaScript files
                 'resources/js/app.js'],
