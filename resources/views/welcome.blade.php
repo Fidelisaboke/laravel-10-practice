@@ -12,10 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <style>
-        /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
-       @vite
-    </style>
+    @vite(['resources/css/welcome.css'])
 </head>
 
 <body class="antialiased">
