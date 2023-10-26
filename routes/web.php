@@ -24,8 +24,18 @@ Route::view('home','home');
 // Overview page
 Route::view('overview', 'overview');
 
+
+/*Returning views via controllers*/
 // Sign in page
 Route::get('sign_in', [Controllers\SignInController::class, 'show']);
 
 // Register page
 Route::get('register',[Controllers\RegisterController::class,'show']);
+
+// Users page
+Route::get('users', [Controllers\UsersController::class,'show']);
+
+
+/*Using controllers as APIs*/
+// Users API
+Route::get('json/users', [Controllers\UsersController::class,'get_json']);

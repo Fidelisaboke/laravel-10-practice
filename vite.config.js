@@ -13,6 +13,7 @@ export default defineConfig({
                 'resources/css/overview.css',
                 'resources/css/home.css',
                 'resources/css/sign_in.css',
+                'resources/css/register.css',
 
                 //*/universals
                 'resources/css/universals/footer.css',
