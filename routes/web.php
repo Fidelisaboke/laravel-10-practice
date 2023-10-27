@@ -39,3 +39,6 @@ Route::get('users', [Controllers\UsersController::class,'show']);
 /*Using controllers as APIs*/
 // Users API
 Route::get('json/users', [Controllers\UsersController::class,'get_json']);
+
+// Register API
+Route::get('json/register', [Controllers\RegisterController::class, 'get_json']);
