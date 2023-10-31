@@ -32,6 +32,9 @@ Route::get('register',[Controllers\RegisterController::class,'show']);
 // Users page
 Route::get('users', [Controllers\UsersController::class,'show']);
 
+//Admin page
+Route::get('admin', [Controllers\AdminController::class,'show']);
+
 
 /*Using controllers as APIs*/
 // Users API
