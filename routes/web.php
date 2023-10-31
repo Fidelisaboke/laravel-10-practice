@@ -26,9 +26,6 @@ Route::view('overview', 'overview');
 
 
 /*Returning views via controllers*/
-// Sign in page
-Route::get('sign_in', [Controllers\SignInController::class, 'show']);
-
 // Register page
 Route::get('register',[Controllers\RegisterController::class,'show']);
 
@@ -42,3 +39,9 @@ Route::get('json/users', [Controllers\UsersController::class,'get_json']);
 
 // Register API
 Route::get('json/register', [Controllers\RegisterController::class, 'get_json']);
+
+
+/*Forms*/
+// Sign in page
+Route::get('sign_in', [Controllers\SignInController::class, 'show']);
+Route::post('sign_in/process', [Controllers\SignInController::class,'get_form_data']);
