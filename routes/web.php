@@ -36,6 +36,7 @@ Route::get('users', [Controllers\UsersController::class,'show']);
 Route::get('admin', [Controllers\AdminController::class,'show']);
 
 
+Route::view('restricted', 'restricted');
 /*Using controllers as APIs*/
 // Users API
 Route::get('json/users', [Controllers\UsersController::class,'get_json']);
@@ -43,7 +44,9 @@ Route::get('json/users', [Controllers\UsersController::class,'get_json']);
 // Register API
 Route::get('json/register', [Controllers\RegisterController::class, 'get_json']);
 
-
+Route::group(['middleware'=>['protectedPage']],function(){
+    Route::view('driver_page', 'driver');
+});
 /*Forms*/
 // Sign in page
 Route::get('sign_in', [Controllers\SignInController::class, 'show']);
