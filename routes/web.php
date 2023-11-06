@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Middleware\authorCheck;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,6 @@ Route::view('home','home');
 // Overview page
 Route::view('overview', 'overview');
 
-
 /*Returning views via controllers*/
 // Register page
 Route::get('register',[Controllers\RegisterController::class,'show']);
@@ -35,6 +35,8 @@ Route::get('users', [Controllers\UsersController::class,'show']);
 //Admin page
 Route::get('admin', [Controllers\AdminController::class,'show']);
 
+// Blog page
+Route::view('blog', 'blog')->middleware([authorCheck::class]);
 
 Route::view('restricted', 'restricted');
 /*Using controllers as APIs*/

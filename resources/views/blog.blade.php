@@ -1,0 +1,1 @@
+<h1>Author's blog</h1>

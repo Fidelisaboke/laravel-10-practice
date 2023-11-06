@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class userTypeCheck
+class authorCheck
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,11 @@ class userTypeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->user_type && $request->user_type === 'admin') {
-            return redirect('admin');
+        if($request->author && $request->author=='true'){
+            echo "<h1>You are an author</h1>";
+        }else{
+            echo "<h1>Not an author! Get out of here!</h1>";
         }
-        echo "<marquee>User Type Check Middleware is live...</marquee>";
         return $next($request);
     }
 }
