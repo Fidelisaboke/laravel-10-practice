@@ -38,6 +38,9 @@ Route::get('admin', [Controllers\AdminController::class,'show']);
 // Blog page
 Route::view('blog', 'blog')->middleware([authorCheck::class]);
 
+// Employee page
+Route::view('employee', 'employee');
+
 Route::view('restricted', 'restricted');
 /*Using controllers as APIs*/
 // Users API
@@ -53,3 +56,6 @@ Route::group(['middleware'=>['protectedPage']],function(){
 // Sign in page
 Route::get('sign_in', [Controllers\SignInController::class, 'show']);
 Route::post('sign_in/process', [Controllers\SignInController::class,'get_form_data']);
+
+// Database operations
+Route::get('employee/all', [Controllers\EmployeeController::class, 'getData']);
